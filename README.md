@@ -32,7 +32,7 @@
     if() : ?
     else : ?
     endif;
-    ```
+    ```php
   - `sample01-19`：短縮if文
   - `sample01-20`：比較演算子
     - `=`：イコール
