@@ -1,2 +1,15 @@
 # PHP_Exercise
-2020後期 Webプログラミング及び演習 PHPコード
+- 2020後期 Webプログラミング及び演習 PHPコード
+- 01
+  - `sample01-01`：print文
+  - `sample01-02`：echo
+  - `sample01-03`：代入
+  - `sample01-04`：型
+  - `sample01-05`：連結
+  - `sample01-06`：define
+  - `sample01-07`：特殊文字 / エスケープ
+  - `sample01-08`：可変変数
+    - `$$hoge`
+  - `sample01-09`：PHP / HTML
+  - `sample01-10`：ショートタグ
+    - `<?php echo` = `<?=`
