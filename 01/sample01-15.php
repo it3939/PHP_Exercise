@@ -5,17 +5,17 @@
     <title>sample01-15</title>
 </head>
 <body>
-<h3>if文</h3>
+<h3>do-while文</h3>
 <?php
-    // 1~10までのループ
-    for ($count=1; $count<=10; $count++) {
+    // カウント用の変数を1に初期設定
+    $count = 1;
+
+    // 変数値が10以下の間ループを繰り返す
+    do {
         print $count;
-        if($count <= 5) {
-            // $countが5以下ならマークを追加
-            print "●";
-        }
-        print "<br />";
-    }
+        print ",";
+        $count++;
+    } while ($count <= 10);
 ?>
 </body>
 </html>
