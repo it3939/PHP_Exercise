@@ -47,6 +47,8 @@
   - `sample01-26`：エラー表示設定
     - `ini_set('display_errors', "On");` or `ini_set('display_errors', 1);`：エラーを表示
     - `ini_set('display_errors', "Off");` or `ini_set('display_errors', 0);`：エラーを非表示
+    - `error_reporting(1)` or `error_reporting(E_ALL)`：エラーを表示
+    - `error_reporting(0)`：エラーを非表示
     - `@`：エラー制御演算子
       - 生成されたエラーメッセージを無視する
   
