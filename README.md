@@ -37,5 +37,17 @@
   - `sample01-20`：比較演算子
     - `=`：イコール
     - `<>`：ノットイコール
+  - `sample01-21`：条件演算子
+  - `sample01-22`：switch文
+  - `sample01-23`：break
+    - ループからの離脱
+  - `sample01-24`：exit その1
+    - スクリプトの終了
+  - `sample01-25`：exit その2
+  - `sample01-26`：エラー表示設定
+    - `ini_set('display_errors', "On");` or `ini_set('display_errors', 1);`：エラーを表示
+    - `ini_set('display_errors', "Off");` or `ini_set('display_errors', 0);`：エラーを非表示
+    - `@`：エラー制御演算子
+      - 生成されたエラーメッセージを無視する
   
   
