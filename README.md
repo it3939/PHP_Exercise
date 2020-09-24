@@ -3,7 +3,7 @@
 - 01
   - `sample01-01`：print文
   - `sample01-02`：echo
-  - `sample01-03`：代入
+  - `sample01-03`：文字列の代入
   - `sample01-04`：型
   - `sample01-05`：連結
   - `sample01-06`：define
@@ -13,3 +13,9 @@
   - `sample01-09`：PHP / HTML
   - `sample01-10`：ショートタグ
     - `<?php echo` = `<?=`
+  - `sample01-11`：代入
+  - `sample01-12`：コメントアウト
+  - `sample01-13`：for文
+  - `sample01-14`：while文
+  - `sample01-15`：if文
+  
