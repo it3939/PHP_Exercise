@@ -32,3 +32,4 @@
 - `sample01-24`：exit その1
 - `sample01-25`：exit その2
 - `sample01-26`：エラー表示設定  
+- `practice.php`：【予習】配列
