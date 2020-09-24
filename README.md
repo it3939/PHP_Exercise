@@ -1,5 +1,7 @@
 # PHP_Exercise
 - 2020後期 Webプログラミング及び演習 PHPコード
+- MAMP DocumentRoot
+  - `/Applications/MAMP/htdocs`
 
 ### 01：[1] 2020/09/24
 - `sample01-01`：print文
