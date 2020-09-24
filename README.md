@@ -17,5 +17,25 @@
   - `sample01-12`：コメントアウト
   - `sample01-13`：for文
   - `sample01-14`：while文
-  - `sample01-15`：if文
+  - `sample01-15`：do-while文
+  - `sample01-16`：if文
+  - `sample01-17`：if-else文
+  - `sample01-18`：PHPとHTMLの組み合わせ
+    - 標準
+    ```php
+    if () {
+    } else if () {
+    } else
+    ```
+    - 短縮
+    ```
+    if() : ?
+    else : ?
+    endif;
+    ```
+  - `sample01-19`：短縮if文
+  - `sample01-20`：比較演算子
+    - `=`：イコール
+    - `<>`：ノットイコール
+  
   
