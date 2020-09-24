@@ -5,7 +5,7 @@
     <title>sample01-03</title>
 </head>
 <body>
-<h3>代入</h3>
+<h3>文字列の代入</h3>
 <?php
     $data = "Hello, World! <br />";
     print $data;
