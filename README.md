@@ -7,7 +7,7 @@
 
 ### 01：[1] 2020/09/24
 - `sample01-01`：print文
-- `sample01-02`：echo
+- `sample01-02`：echo文
 - `sample01-03`：文字列の代入
 - `sample01-04`：型
 - `sample01-05`：連結
