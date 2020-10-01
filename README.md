@@ -56,7 +56,7 @@
 - `sample12-01.html`, `sample12-01.php`：POSTメソッド
 - `sample12-02.html`, `sample12-02.php`：GETメソッド
 - `sample12-03.html`, `sample12-03.php`：POSTメソッド / GETメソッド
-- `sample12-04.html`, `sample12-04.php`：変数受け取り・POSTメソッド / GETメソッド
+- `sample12-04.html`, `sample12-04.php`：変数受け取り
 - `sample12-05.php`：フォームデータ受け取り
 - `sample12-06.html`, `sample12-06.php`：パラメータ付きリンク
 - `sample12-07.php`：テキストボックス
