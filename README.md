@@ -53,17 +53,17 @@
 - `sample02-16`：平方根
 
 ### 02-2：[2] 2020/10/01
-- `sample12-01.html`, `sample12-01.php`：__POSTメソッド__
-- `sample12-02.html`, `sample12-02.php`：__GETメソッド__
-- `sample12-03.html`, `sample12-03.php`：__POSTメソッド / GETメソッド__
-- `sample12-04.html`, `sample12-04.php`：__変数受け取り・POSTメソッド / GETメソッド__
-- `sample12-05.php`：__フォームデータ受け取り__
-- `sample12-06.html`, `sample12-06.php`：__パラメータ付きリンク__
-- `sample12-07.php`：__テキストボックス__
-- `sample12-08.php`：__ラジオボタン__
-- `sample12-09.php`：__チェックボックス__
-- `sample12-10.php`：__複数選択可能なチェックボックス__
-- `sample12-11.php`：__複数入力可能なテキストボックス__
-- `sample12-12.php`：__リストボックス__
-- `sample12-13.php`：__テキストエリア__
-- `sample12-14.php`：__クリックされたボタンの調査__
+- `sample12-01.html`, `sample12-01.php`：POSTメソッド
+- `sample12-02.html`, `sample12-02.php`：GETメソッド
+- `sample12-03.html`, `sample12-03.php`：POSTメソッド / GETメソッド
+- `sample12-04.html`, `sample12-04.php`：変数受け取り・POSTメソッド / GETメソッド
+- `sample12-05.php`：フォームデータ受け取り
+- `sample12-06.html`, `sample12-06.php`：パラメータ付きリンク
+- `sample12-07.php`：テキストボックス
+- `sample12-08.php`：ラジオボタン
+- `sample12-09.php`：チェックボックス
+- `sample12-10.php`：複数選択可能なチェックボックス
+- `sample12-11.php`：複数入力可能なテキストボックス
+- `sample12-12.php`：リストボックス
+- `sample12-13.php`：テキストエリア
+- `sample12-14.php`：クリックされたボタンの調査
