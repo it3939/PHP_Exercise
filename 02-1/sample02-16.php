@@ -12,7 +12,7 @@
     print sqrt(4);
     print "<br />";
 
-    //256の平方根を出力
+    // 256の平方根を出力
     print "256のルートは ";
     print sqrt(256);
     print "<br />";
