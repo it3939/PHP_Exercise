@@ -5,6 +5,7 @@
     <title>sample12-10</title>
 </head>
 <body>
+<h3>複数選択可能なチェックボックス</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

@@ -5,6 +5,7 @@
     <title>sample12-09</title>
 </head>
 <body>
+<h3>チェックボックス</h3>    
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

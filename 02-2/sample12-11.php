@@ -5,6 +5,7 @@
     <title>sample12-11</title>
 </head>
 <body>
+<h3>複数入力可能なテキストボックス</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

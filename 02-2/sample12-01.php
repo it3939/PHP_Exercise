@@ -5,7 +5,7 @@
     <title>sample12-01</title>
 </head>
 <body>
-<h3>POST</h3>
+<h3>POSTメソッド</h3>
 <?php
     print "POSTで送信されたデータは<br />";
     print "<br />";

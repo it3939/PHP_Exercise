@@ -5,6 +5,7 @@
     <title>sample12-06</title>
 </head>
 <body>
+<h3>パラメータ付きリンク</h3>
 <?php
     print "受け取ったデータは<br />";
     print "<br />";

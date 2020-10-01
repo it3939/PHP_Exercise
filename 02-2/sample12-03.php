@@ -5,7 +5,7 @@
     <title>sample12-03</title>
 </head>
 <body>
-<h3>POST / GET</h3>
+<h3>POSTメソッド / GETメソッド</h3>
 <?php
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // POSTで送信されたとき

@@ -5,7 +5,7 @@
     <title>sample12-04</title>
 </head>
 <body>
-<h3>POST / GET</h3>
+<h3>変数受け取り</h3>
 <?php
     ini_set('display_errors', "On");
     // 受け取った変数をrcv_で始める変数名に展開

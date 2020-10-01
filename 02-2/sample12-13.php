@@ -5,6 +5,7 @@
     <title>sample12-13</title>
 </head>
 <body>
+<h3>テキストエリア</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

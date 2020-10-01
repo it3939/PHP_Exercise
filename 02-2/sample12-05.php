@@ -5,6 +5,7 @@
     <title>sample12-05</title>
 </head>
 <body>
+<h3>フォームデータ受け取り</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

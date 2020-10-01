@@ -5,6 +5,7 @@
     <title>sample12-14</title>
 </head>
 <body>
+<h3>クリックされたボタンの調査</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

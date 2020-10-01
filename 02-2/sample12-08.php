@@ -5,6 +5,7 @@
     <title>sample12-08</title>
 </head>
 <body>
+<h3>ラジオボタン</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

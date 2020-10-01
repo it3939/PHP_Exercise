@@ -5,7 +5,7 @@
     <title>sample12-02</title>
 </head>
 <body>
-<h3>GET</h3>
+<h3>GETメソッド</h3>
 <?php
     print "GETで送信されたデータは<br />";
     print "<br />";
