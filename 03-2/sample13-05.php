@@ -28,7 +28,7 @@
             setcookie("mycart", "ck_id=$id");
     
             // 追加したデータを表示
-            print "今回カートに入れた商品IDは " .$_GET['id'] . "<br /><br />";
+            print "今回カートに入れた商品IDは " . $_GET['id'] . "<br /><br />";
         }
 
         // 現在のカート内容を列挙
