@@ -1,7 +1,6 @@
 <?php
-    ini_set('display_errors', "Off"); // XAMPPではどうしても $_COOKIE['id'] が未定義になるので警告エラーを非表示にする
-    error_reporting(0);
-
+    ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
+    
     if (isset($_GET['id'])) {
         // idデータが渡されたとき
         // セッションを開始
