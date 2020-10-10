@@ -22,7 +22,7 @@
     }
 ?>
     <hr>
-    テキストボックスに値を入力して[送信]ボタンをクリックしてください。
+    テキストボックスに値を入力して[送信]ボタンをクリックしてください。<br />
     <form action="<?= $_SERVER['SCRIPT_NAME'] ?>" method="POST">
         <input size="90" type="text" name="inputdata">
         <input type="submit" name="btnExec" value="送信">

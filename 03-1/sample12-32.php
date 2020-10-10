@@ -9,7 +9,7 @@
     if (isset($_SERVER['HTTP_REFERER'])) {
         print "このPHPファイルは、次のURLから呼び出されました。<br />";
         print $_SERVER['HTTP_REFERER'] . "<br /><br />";
-        if ($_SERVER['HTTP_REFERER'] == "http://localhost/WebProg_Exercise/03/sample12-32.php") {
+        if ($_SERVER['HTTP_REFERER'] == "http://localhost/WebProg_Exercise/03-1/sample12-32.php") {
             print "自分自身のファイルから呼ばれました。<br />";
         }
     }

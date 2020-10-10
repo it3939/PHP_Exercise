@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>sample12-31</title>  
+    <title>sample12-31</title>
 </head> 
 <?php
     ini_set('display_errors', "Off"); // XAMPPではどうしても $_POST['area'], strlistbox が未定義になるので警告エラーを非表示にする
