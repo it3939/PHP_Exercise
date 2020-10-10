@@ -1,7 +1,6 @@
 # PHP_Exercise
-### どうぞダウンロードして使ってください。<br>クロスプラットフォームに対応できるようにコード修正もしてあります。<br>どのOSでも結果たぶん同じなはず！
-
 - 2020後期 Webプログラミング及び演習 PHPコード
+### どうぞダウンロードして使ってください。<br>クロスプラットフォームに対応できるようにコード修正もしてあります。<br>どのOSでも結果たぶん同じなはず！
 - MAMP DocumentRoot
   - `/Applications/MAMP/htdocs`
 - XAMPP DocumentRoot
