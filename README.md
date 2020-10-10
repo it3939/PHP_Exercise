@@ -1,4 +1,5 @@
 # PHP_Exercise
+### 見つけた人！！どうぞダウンロードして使ってください。クロスプラットフォームにタイプできるようにバグ修正してあります。
 - 2020後期 Webプログラミング及び演習 PHPコード
 - MAMP DocumentRoot
   - `/Applications/MAMP/htdocs`
