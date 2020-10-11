@@ -12,6 +12,7 @@
     <title>sample13-01</title>
 </head>
 <body>
+<h3>クッキーにデータを保存</h3>
 <?php
         print "データをクッキーに保存しました。";
     } else {

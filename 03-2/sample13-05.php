@@ -5,8 +5,9 @@
     <title>sample13-05</title>
 </head>
 <body>
+<h3>カートに入れる仕組みを作る（クッキー版）</h3>
 <?php
-    ini_set('display_errors', "Off"); // XAMPPではどうしても $_COOKIE['id'] が未定義になるので警告エラーを非表示にする
+    ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
 
     if (isset($_GET['id'])) {
         // idデータが渡されたとき
@@ -23,7 +24,7 @@
                 $id = $ck_id;
             }
             // 現在のカートデータに今回の商品IDをカンマ区切りで追加
-            $id .= (strlen($id) == 0 ? "" : ",") .$_GET['id'];
+            $id .= (strlen($id) == 0 ? "" : ",") . $_GET['id'];
             // データをクッキーに保存
             setcookie("mycart", "ck_id=$id");
     

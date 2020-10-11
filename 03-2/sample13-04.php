@@ -5,8 +5,9 @@
     <title>sample13-04</title>
 </head>
 <body>
+<h3>フォームへの前回入力値を自動入力</h3>
 <?php
-    ini_set('display_errors', "Off"); // XAMPPではどうしても $_COOKIE['mycookiedata'] が未定義になるので警告エラーを非表示にする
+    ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
     
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
@@ -33,8 +34,8 @@
     <hr>
     名前と住所を入力して[送信]ボタンをクリックしてください。
     <form action="<?= $_SERVER['SCRIPT_NAME'] ?>" method="POST">
-        <p>名前：<input size="40" type="text" name="username" value="<?= $name='' ?>"></p>
-        <p>住所：<input size="40" type="text" name="useraddress" value="<?= $address='' ?>"></p>
+        <p>名前：<input size="40" type="text" name="username" value="<?= $name ?>"></p>
+        <p>住所：<input size="40" type="text" name="useraddress" value="<?= $address ?>"></p>
         <input type="submit" name="btnExec" value="送信">
     </form>
 </body>
