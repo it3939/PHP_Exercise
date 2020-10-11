@@ -1,10 +1,12 @@
 # PHP_Exercise
 - 2020後期 Webプログラミング及び演習 PHPコード
 ### 写経はつまらんので、見つけた人自由にダウンロードして使ってください。<br>クロスプラットフォームに対応できるようにコード修正もしてあります。<br>どのOSでも結果たぶん同じなはず！
-- MAMP DocumentRoot
-  - `/Applications/MAMP/htdocs`
-- XAMPP DocumentRoot
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) XAMPP DocumentRoot（Windows, macOS, Linux）
   - `/Applications/XAMPP/xamppfiles/htdocs`
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) MAMP DocumentRoot（macOS）
+  - `/Applications/MAMP/htdocs`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) LAMP DocumentRoot（Linux）
+  - `/var/www/html` 
 
 ### 01：[1] 2020/09/24
 - `sample01-01`：print文
