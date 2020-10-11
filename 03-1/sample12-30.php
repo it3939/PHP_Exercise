@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>sample12-30</title>  
 </head> 
+<h3>ページのスタイル（CSS）を動的に切り替える</h3>
 <?php
-    ini_set('display_errors', "Off"); // XAMPPではどうしても $_POST['style'] が未定義になるので警告エラーを非表示にする
+    ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
 
     // 送信されたスタイルの番号を取得
     $stylenum = $_POST['style'];
@@ -28,6 +29,7 @@
 ?>
 <link rel="stylesheet" href="<?= $cssfile ?>">
 <body>
+    <hr>
     <table border="1">
         <tr>
             <td with="500">
@@ -39,7 +41,7 @@
         </tr>
     </table>
     <form action="<?= $_SERVER['SCRIPT_NAME'] ?>" method="POST" name="myform">
-        スタイル：<br /><br />
+        <br />【スタイルを選択してください】<br />
         <select size="3" name="style" onclick="document.myform.submit();">
             <option value="1" <?= ($stylenum==1?" selected":"") ?>> スタイル１ </option>
             <option value="2" <?= ($stylenum==2?" selected":"") ?>> スタイル２ </option>

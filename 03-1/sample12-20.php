@@ -5,6 +5,7 @@
     <title>sample12-20</title>
 </head>
 <body>
+<h3>受け取ったデータの未入力を確認</h3>
 <?php
     // エラーフラグをOFF
     $errflag = False;

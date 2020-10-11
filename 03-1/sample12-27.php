@@ -5,6 +5,7 @@
     <title>sample12-27</title>
 </head>
 <body>
+<h3>1. 別ページへ強制ジャンプ</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

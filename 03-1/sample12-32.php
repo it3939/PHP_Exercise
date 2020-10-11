@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>sample12-32</title>  
 </head> 
+<h3>呼び出し元ページを確認</h3>
 <?php
     // リファラを取得して確認する
     if (isset($_SERVER['HTTP_REFERER'])) {

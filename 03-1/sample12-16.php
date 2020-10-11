@@ -5,6 +5,7 @@
     <title>sample12-16</title>
 </head>
 <body>
+<h3>HTMLの特殊文字を実体参照に置換</h3>    
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

@@ -5,6 +5,7 @@
     <title>sample12-21-1</title>
 </head>
 <body>
+<h3>1. 受け取ったデータを次ページに渡す</h3>    
 <?php
     if (!isset($_POST['btnExec'])) {
         // 初めて呼び出されたとき

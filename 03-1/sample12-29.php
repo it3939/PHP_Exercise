@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>sample12-29</title>   
 </head>    
+<h3>フォントサイズを動的に切り替える</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
@@ -36,6 +37,7 @@
     }
 </style> 
 <body>
+    <hr>
     <table border="1">
         <tr>
             <td with="500">

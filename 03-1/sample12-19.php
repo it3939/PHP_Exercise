@@ -5,6 +5,7 @@
     <title>sample12-19</title>
 </head>
 <body>
+<h3>受け取ったデータの妥当性を確認</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
@@ -19,6 +20,7 @@
         }
 
         // 受け取ったデータをそのまま表示
+        print "【そのまま表示】<br />";
         print $_POST['inputdata'] . "<br /><br />\n\n";
     }
 ?>

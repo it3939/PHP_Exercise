@@ -5,6 +5,7 @@
     <title>sample12-25</title>
 </head>
 <body>
+<h3>ファイルをアップロード</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 実行ボタンがクリックされたとき

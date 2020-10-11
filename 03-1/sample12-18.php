@@ -5,6 +5,7 @@
     <title>sample12-18</title>
 </head>
 <body>
+<h3>エスケープ文字を除去</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

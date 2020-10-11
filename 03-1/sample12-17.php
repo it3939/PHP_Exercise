@@ -5,6 +5,7 @@
     <title>sample12-17</title>
 </head>
 <body>
+<h3>改行タグを追加</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき

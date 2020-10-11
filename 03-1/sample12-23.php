@@ -5,6 +5,7 @@
     <title>sample12-23</title>
 </head>
 <body>
+<h3>URLエンコードされたデータを元に戻す</h3>
 <?php
     if (isset($_GET['btnExec'])) {
         // 送信ボタンがクリックされたとき

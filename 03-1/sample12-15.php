@@ -5,6 +5,7 @@
     <title>sample12-15</title>
 </head>
 <body>
+<h3>HTMLタグ</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
@@ -16,9 +17,9 @@
         print "【すべてのHTMLタグを除去して表示】<br />";
         print strip_tags($_POST['inputdata'] . "<br>") . "<br /><br />\n\n";
 
-        // Bタグは残してHTMLタグを除去して表示
-        print "【Bタグは残してHTMLタグを除去して表示】<br />";
-        print strip_tags($_POST['inputdata'], "<br>") . "<br /><br />\n\n";
+        // HTMLタグを除去し、bタグは残して表示
+        print "【HTMLタグを除去し、bタグは残して表示】<br />";
+        print strip_tags($_POST['inputdata'], "<b>") . "<br /><br />\n\n";
     }
 ?>
     <hr>

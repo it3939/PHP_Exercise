@@ -5,6 +5,7 @@
     <title>sample12-26</title>
 </head>
 <body>
+<h3>複数のファイルをまとめてアップロード</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 実行ボタンがクリックされたとき

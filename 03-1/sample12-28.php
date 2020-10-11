@@ -5,6 +5,7 @@
     <title>sample12-28</title>
 </head>
 <body>
+<h3>検索エンジンサイトにキーワードを渡す</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
