@@ -9,7 +9,9 @@
         print "<meta charset=\"UTF-8\">\n";
         print "<title>sample14-09-2</title>\n";
         print "</head>\n";
-        print "<body><p>\n";
+        print "<body>\n";
+        print "<h3>2. セッション変数を使ってユーザIDを使い回す</h3>\n";
+        print "<hr><p>\n";
         print "あなたのユーザIDは「" . $_SESSION['sesuserid'] . "」です。<br />";
         print "<br />";
         print "*************************************************<br />";

@@ -18,6 +18,7 @@
     <title>sample14-08</title>
 </head>
 <body>
+<h3>セッションIDを変更</h3>
 <?php    
     // 現在のセッションIDを表示
     print "【現在のセッションID】<br />";

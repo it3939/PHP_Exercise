@@ -9,6 +9,7 @@
     <title>sample14-06</title>
 </head>
 <body>
+<h3>セッションを終了</h3>
 <?php
     ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
 

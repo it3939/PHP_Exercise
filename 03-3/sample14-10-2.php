@@ -1,3 +1,12 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample14-10-2</title>
+</head>
+<body>
+<h3>2. カートに入れる仕組みを作る（セッション版）</h3>
 <?php
     // セッションを開始
     session_start();
@@ -24,14 +33,8 @@
             $html .= $product[$data - 1] . "<br />";
         }
     }
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>sample14-10-2</title>
-</head>
-<body>
+?>    
+    <hr>
     <?= $html ?>
     <br /><br />
     <a href="sample14-10-1.php">戻る</a>

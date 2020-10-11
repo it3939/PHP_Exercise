@@ -9,6 +9,7 @@
     <title>sample14-02</title>
 </head>
 <body>
+<h3>セッション変数にデータを保存</h3>
 <?php
     // セッション変数にデータを代入
     $_SESSION['sesdata1'] = 10;

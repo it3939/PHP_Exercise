@@ -11,6 +11,7 @@
     <title>sample14-07</title>
 </head>
 <body>
+<h3>セッション名を変更</h3>
 <?php    
     // 前のセッション名を表示
     print "【前のセッション名】<br />";

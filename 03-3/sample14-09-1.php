@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample14-09-1</title>
+</head>
+<body>
+<h3>1. セッション変数を使ってユーザIDを使い回す</h3>
 <?php
     if (isset($_POST['btnExec'])) {
         // 送信ボタンがクリックされたとき
@@ -15,13 +23,6 @@
         }
     }
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>sample14-09-1</title>
-</head>
-<body>
     <hr>
     ユーザIDとパスワードを入力して[送信]ボタンをクリックしてください。
     <form action="<?= $_SERVER['SCRIPT_NAME'] ?>" method="POST">

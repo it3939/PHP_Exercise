@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>sample14-10-1</title>
+</head>
+<body>
+<h3>1. カートに入れる仕組みを作る（セッション版）</h3>
 <?php
     ini_set('display_errors', "Off"); // XAMPPではセッション変数を破棄すると未定義扱いの警告エラーが出るため非表示にする
     
@@ -16,7 +24,7 @@
                 $cart = $_SESSION['sescart'];
             }
             // 現在のカートデータに今回の商品IDをカンマ区切りで追加
-            $cart .= (strlen($cart) == 0 ? "" : ",") .$_GET['id'];
+            $cart .= (strlen($cart) == 0 ? "" : ",") . $_GET['id'];
             // セッション変数にデータを代入して保存
             $_SESSION['sescart'] = $cart;
 
@@ -25,13 +33,6 @@
         }
     }
 ?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>sample14-10-1</title>
-</head>
-<body>
     <hr>
     <table border="1">
         <tr>
