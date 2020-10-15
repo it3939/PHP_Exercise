@@ -9,7 +9,7 @@
     <h1>サクッとTODO管理</h1>
     <h2>締め切りオーバー</h2>
     <ul class="todo-list">
-        {forech from=$todo_over_list item=todo}
+        {foreach from=$todo_over_list item=todo}
             <li class="over">{$todo.title|escape} (~{$todo.date|escape}) </li>
         {foreachelse}
             <li>締め切りを過ぎたTODOはありません</li>
@@ -17,7 +17,7 @@
     </ul>
     <h2>今日以降の締め切り</h2>
     <ul class="todo-list">
-        {forech from=$todo_upcoming_list item=todo}
+        {foreach from=$todo_upcoming_list item=todo}
             <li class="upcoming">{$todo.title|escape} (~{$todo.date|escape}) </li>
         {foreachelse}
             <li>今後予定されているTODOはありません</li>

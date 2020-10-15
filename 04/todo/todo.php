@@ -8,14 +8,13 @@ if ($file_contents === false) {
     exit();                                    
 }
 
-
 $todo_over_list = array();      // 過去のTODO情報を格納するための配列
-$todo_upcoming_list = arrray(); // 現在のTODO情報を格納するための配列
-$todo_date = date("Y/m/d");
+$todo_upcoming_list = array();  // 現在のTODO情報を格納するための配列
+$today_date = date("Y/m/d");
 
 foreach ($file_contents as $line) {
-    $line - mb_convert_encoding($line, "UTF-8", "utf,sjis");  // 文字コードをUTF-8に変換
-    list($todo_date_str, $todo_title) = explode("\t", $line); // タブで区切る
+    $line = mb_convert_encoding($line, "UTF-8", "utf-8,sjis");  // 文字コードをUTF-8に変換
+    list($todo_date_str, $todo_title) = explode("\t", $line);   // タブで区切る
     $todo_date = date("Y/m/d", strtotime($todo_date_str));
     if ($todo_date < $today_date) {
         $todo_over_list[] = array("title" => $todo_title, "date" => $todo_date);
