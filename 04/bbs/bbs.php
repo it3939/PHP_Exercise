@@ -3,7 +3,7 @@
 //*------------------------------*// ① のブロック 開始
 error_reporting(E_ALL);           // エラーを表示
 ini_set('display_errors', "Off"); // 画面上のエラーを非表示設定にする
-$data_dir = "bbs-data";           // 掲示板データを保存するフォルダ                 
+$data_dir = "bbs_data";           // 掲示板データを保存するフォルダ                 
 
 //*------------------------------*// ② のブロック 開始
 if (isset($_POST['save'])) {
@@ -33,7 +33,7 @@ rsort($file_list);
 
 //*------------------------------*// ④ のブロック 開始
 $bbs_list = array();
-foreach ($file_lst as $file) {
+foreach ($file_list as $file) {
     $contents = file_get_contents($file);
     list($date, $title, $name, $body) = explode("||", $contents);
     $bbs = array();
@@ -45,7 +45,7 @@ foreach ($file_lst as $file) {
 }
 
 //*------------------------------*// ⑤ のブロック 開始
-require_once("samrty/Smarty.class.php");
+require_once("smarty/Smarty.class.php");
 $smarty = new Smarty();               // Smartyインスタンス（$smartyオブジェクト）を作成
 
 $smarty->template_dir = "templates";  // テンプレートディレクトリの指定        
@@ -53,8 +53,8 @@ $smarty->compile_dir = "templates_c"; // コンパイルディレクトリの指
 
 //*------------------------------*// ⑥ のブロック 開始
 /* テンプレート変数に割り当てる */
-$smarty->assing("error_message", $error_message);
-$smarty->assing("bbs_list", $bbs_list);
+$smarty->assign("error_message", $error_message);
+$smarty->assign("bbs_list", $bbs_list);
 $smarty->display("bbs.html");         // テンプレートを表示
 
 ?>

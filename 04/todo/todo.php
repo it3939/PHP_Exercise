@@ -13,8 +13,8 @@ $todo_upcoming_list = array();  // 現在のTODO情報を格納するための�
 $today_date = date("Y/m/d");
 
 foreach ($file_contents as $line) {
-    $line = mb_convert_encoding($line, "UTF-8", "utf-8,sjis");  // 文字コードをUTF-8に変換
-    list($todo_date_str, $todo_title) = explode("\t", $line);   // タブで区切る
+    $line = mb_convert_encoding($line, "UTF-8", "UTF-8, SJIS");  // 文字コードをUTF-8に変換
+    list($todo_date_str, $todo_title) = explode(", ", $line);    // コンマ+空白（, ）で区切る
     $todo_date = date("Y/m/d", strtotime($todo_date_str));
     if ($todo_date < $today_date) {
         $todo_over_list[] = array("title" => $todo_title, "date" => $todo_date);
@@ -23,14 +23,14 @@ foreach ($file_contents as $line) {
     }
 }
 
-require_once("samrty/Smarty.class.php");
+require_once("smarty/Smarty.class.php");
 $smarty = new Smarty();               // Smartyインスタンス（$smartyオブジェクト）を作成
 $smarty->template_dir = "templates";  // テンプレートディレクトリの指定        
 $smarty->compile_dir = "templates_c"; // コンパイルディレクトリの指定
 
 /* テンプレート変数に割り当てる */
-$smarty->assing("todo_over_list", $todo_over_list);         
-$smarty->assing("todo_upcoming_list", $todo_upcoming_list); 
+$smarty->assign("todo_over_list", $todo_over_list);         
+$smarty->assign("todo_upcoming_list", $todo_upcoming_list); 
 $smarty->display("todo.html");        // テンプレートを表示
 
 ?>

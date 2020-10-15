@@ -5,7 +5,7 @@ $mysqli = new mysqli("localhost", "root", "root", "rss_reader");
 $mysqli->set_charset("utf-8");
 $xml = 
 simplexml_load_file("https://news.yahoo.co.jp/pickup/computer/rss.xml");
-foreach ($xml->channel->item, as $feed) {
+foreach ($xml->channel->item as $feed) {
     $stmt = $mysqli->prepare("SELECT * FROM rss_item WHERE guid = ?");
     $stmt->bind_parm("s", $feed->guid);
     $stmt->execute();
@@ -16,8 +16,7 @@ foreach ($xml->channel->item, as $feed) {
         $stmt2 = $mysqli->prepare("UPDATE rss_item SET pub_date = ?, 
         title = ?, description = ?, author = ?, link = ? WHERE guid = ? ");
     } 
-    $stmt2->bind_param("ssssss", date("Y/m/d H:i:s"), strtotime($feed->pubDate)), 
-    $feed->title, $feed->description, $feed->author, $feed->link, $feed->guid);
+    $stmt2->bind_param("ssssss", date("Y/m/d H:i:s", strtotime($feed->pubDate)), $feed->title, $feed->description, $feed->author, $feed->link, $feed->guid);
     $stmt2->execute();
 }
 $query_result = $mysqli->query("SELECT * FROM rss_item ORDER BY pub_date DESC");
@@ -44,7 +43,7 @@ while ($rss = $query_result->fetch_array()) {
         <?php }?>
     </ul>
     <?php foreach ($rss_list as $rss) { ?>
-        <a name="no<?php echo(htmlspecialchars($rss["id"]) ?>">
+        <a name="no<?php echo($rss["id"]) ?>">
         <h2>
             <a href="<?php echo(htmlspecialchars($rss["link"])) ?>">
                 <?php echo(htmlspecialchars($rss["title"], ENT_QUOTES)); ?>
