@@ -111,3 +111,39 @@
 - `sample14-08`：セッションIDを変更
 - `sample14-09`：セッション変数を使ってユーザIDを使い回す
 - `sample14-10`：カートに入れる仕組みを作る（セッション版）
+
+### 04：[3] 2020/10/15
+- `todo`：TODO管理Webアプリケーション
+- `rss`：Yahooニューストピックス（ https://news.yahoo.co.jp/pickup/computer/rss.xml ）をリスト表示
+- `bbs`：簡易掲示板Webアプリケーション
+- `bbs-db`：簡易掲示板Webアプリケーション（DB版）
+- `db_migrate`
+  - `post.sql`
+    ```sql
+    DROP TABLE IF EXISTS post;
+    
+    CREATE TABLE post (
+        title  text      NOT NULL,
+        date   datetime  NOT NULL,
+        name   text      NOT NULL,
+        body   text      NOT NULL
+    );
+    
+    INSERT INTO post (title, date, name, body) 
+    VALUES ('ようこそ掲示板へ', '2020-10-16 20:16:34', '管理人 RenGoto', 'ざっくば    らんに会話を楽しみましょう。');
+    ```  
+  - `rss_item.sql`  
+    ```sql
+    DROP TABLE IF EXISTS rss_item;
+    
+    CREATE TABLE  rss_item (
+        id           int(11)   NOT NULL AUTO_INCREMENT,
+        guid         text      DEFAULT NULL,
+        pub_date     datetime  NOT NULL,
+        title        text      NOT NULL,
+        description  text      NOT NULL,
+        author       text      NOT NULL,
+        link         text      DEFAULT NULL,
+        PRIMARY KEY (id)
+    )
+    ```  
