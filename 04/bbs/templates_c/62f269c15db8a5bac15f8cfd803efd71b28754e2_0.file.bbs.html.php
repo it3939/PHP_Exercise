@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2020-10-16 02:38:28
+/* Smarty version 3.1.33, created on 2020-10-17 03:37:45
   from '/Applications/XAMPP/xamppfiles/htdocs/WebProg_Exercise/04/bbs/templates/bbs.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5f8889140f0640_81914071',
+  'unifunc' => 'content_5f89e879dfd6a9_87711460',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62f269c15db8a5bac15f8cfd803efd71b28754e2' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/WebProg_Exercise/04/bbs/templates/bbs.html',
-      1 => 1602783506,
+      1 => 1602873428,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f8889140f0640_81914071 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f89e879dfd6a9_87711460 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Applications/XAMPP/xamppfiles/htdocs/WebProg_Exercise/04/bbs/smarty/plugins/modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Applications/XAMPP/xamppfil
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>サクッと掲示板（BBS）</h1>
+    <h1>サクッと掲示板</h1>
 
         <?php if ($_smarty_tpl->tpl_vars['error_message']->value) {?>
         <ul class="error-message">
@@ -49,8 +49,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </ul>
     <?php }?>
 
-    <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME'];?>
-">
+    <form action="<?php echo $_SERVER['SCRIPT_NAME'];?>
+" method="post">
         <table>
             <tr>
                 <th>投稿者名</th>
@@ -78,7 +78,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['bbs']->value) {
         <h2><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['bbs']->value['title'], ENT_QUOTES, 'UTF-8', true);?>
 </h2>
         <p><?php echo htmlspecialchars(smarty_modifier_date_format($_smarty_tpl->tpl_vars['bbs']->value['date'],"%Y年%m月%e日 %H:%M:%S"), ENT_QUOTES, 'UTF-8', true);?>
- / 投稿者: <strong><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['bbs']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
+ / 投稿者：<strong><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['bbs']->value['name'], ENT_QUOTES, 'UTF-8', true);?>
 </strong></p>
         <p><?php echo nl2br(htmlspecialchars($_smarty_tpl->tpl_vars['bbs']->value['body'], ENT_QUOTES, 'UTF-8', true));?>
 </p>

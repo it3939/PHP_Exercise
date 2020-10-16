@@ -17,7 +17,7 @@
         </ul>
     {/if}
 
-    <form method="post" action="{$smarty.server.SCRIPT_NAME}">
+    <form action="{$smarty.server.SCRIPT_NAME}" method="post">
         <table>
             <tr>
                 <th>投稿者名</th>
@@ -40,7 +40,7 @@
     {* 掲示板データを表示する処理 *}
     {foreach from=$bbs_list item=bbs}
         <h2>{$bbs.title|escape}</h2>
-        <p>{$bbs.date|date_format:"%Y年%m月%e日 %H:%M:%S"|escape} / 投稿者: <strong>{$bbs.name|escape}</strong></p>
+        <p>{$bbs.date|date_format:"%Y年%m月%e日 %H:%M:%S"|escape} / 投稿者：<strong>{$bbs.name|escape}</strong></p>
         <p>{$bbs.body|escape|nl2br}</p>
     {/foreach}
 </body>

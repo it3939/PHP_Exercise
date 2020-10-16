@@ -1,15 +1,19 @@
 <?php
+
 error_reporting(E_ALL);                  // エラーを表示
 ini_set('display_errors', "Off");        // 画面上のエラーを非表示設定にする
-$mysqli = new mysqli("localhost", "root", "password", "rss_reader");
-$mysqli->set_charset("utf8");
+
+
+$mysqli = new mysqli("localhost", "root", "password", "rss_reader"); // (hostname, username, password, DBname)
+$mysqli->set_charset("UTF-8");
 $xml = simplexml_load_file("https://news.yahoo.co.jp/pickup/computer/rss.xml");
 
 foreach ($xml->channel->item as $feed) {
-    $stmt = $mysqli->prepare("SELECT * FROM rss_item WHERE guid = ?");
-    $stmt->bind_param("s", $feed->guid);
-    $stmt->execute();
-    $stmt->store_result();
+    $stmt = $mysqli->prepare("SELECT * FROM rss_item WHERE guid = ?"); // クエリ定義
+    $stmt->bind_param("s", $feed->guid);                               // 値セット
+    $stmt->execute();                                                  // 実行
+    $stmt->store_result();                                             // 格納
+
     if ($stmt->num_rows() == 0) {
         $stmt2 = $mysqli->prepare("INSERT INTO rss_item (pub_date, title, description, author, link, guid) VALUES(?, ?, ?, ?, ?, ?)");
     } else {
@@ -18,12 +22,17 @@ foreach ($xml->channel->item as $feed) {
     $stmt2->bind_param("ssssss", date("Y/m/d H:i:s", strtotime($feed->pubDate)), $feed->title, $feed->description, $feed->author, $feed->link, $feed->guid);
     $stmt2->execute();
 }
+
 $query_result = $mysqli->query("SELECT * FROM rss_item ORDER BY pub_date DESC");
-$rss_list = array();
+
+$rss_list = array(); // トピックを格納するための配列
 while ($rss = $query_result->fetch_array()) {
     $rss_list[] = $rss;
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -36,7 +45,7 @@ while ($rss = $query_result->fetch_array()) {
     <ul>
         <?php foreach ($rss_list as $rss) { ?>
             <li>
-                <a href="#no<?php echo($rss['id']) ?>">
+                <a href="#no<?php echo($rss['id']); ?>">
                 <?php echo(htmlspecialchars($rss['title'], ENT_QUOTES)); ?>
             </li>
         <?php }?>
@@ -49,11 +58,13 @@ while ($rss = $query_result->fetch_array()) {
             </a>
         </h2>
         <p>
-            <strong>作成：<?php echo(htmlspecialchars($rss['author'])) ?>
-            (<?php echo(htmlspecialchars($rss['pub_date'])) ?>)
+            <strong>作成：<?php echo(htmlspecialchars($rss['author'])); ?>
+            【<?php echo(htmlspecialchars($rss['pub_date'])); ?>】
             </strong>
         </p>
-        <p><?php echo(nl2br(strip_tags($rss['description']))); ?></p>
+        <p>
+            <?php echo(nl2br(strip_tags($rss['description']))); ?>
+        </p>
     <?php } ?>
 </body>
 </html>
