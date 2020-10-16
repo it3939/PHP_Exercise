@@ -11,13 +11,13 @@
     {* エラーメッセージを表示する処理 *}
     {if $error_message}
         <ul class="error-message">
-            {forech from=$error_message item=message}
+            {foreach from=$error_message item=message}
                 <li>{$message|escape}</li>
             {/foreach}
         </ul>
     {/if}
 
-    <form action="{$samtry.server.SCRIPT_NAME}" method="post">
+    <form method="post" action="{$smarty.server.SCRIPT_NAME}">
         <table>
             <tr>
                 <th>投稿者名</th>
@@ -27,7 +27,8 @@
                 <th>タイトル</th>
                 <td><input type="text" name="title" size="50"></td>
             </tr>
-            <tr colspan="2">
+            <tr>
+                <th>本文</th>
                 <td colspan="2"><textarea name="body" cols="50 rows="5"></textarea></td>
             </tr>
         </table>
@@ -37,10 +38,10 @@
     <hr>
 
     {* 掲示板データを表示する処理 *}
-    {forech from=$bbs_list item=bbs}
+    {foreach from=$bbs_list item=bbs}
         <h2>{$bbs.title|escape}</h2>
-        <p>{$bbs.date|date_format:"%Y年%m月%e日 %H:%M:%S"|escape} / 投稿者: <strong>{$bbs.name|scape}</strong></p>
-        <p>{$bbs.body}|escape|nl2br}</p>
+        <p>{$bbs.date|date_format:"%Y年%m月%e日 %H:%M:%S"|escape} / 投稿者: <strong>{$bbs.name|escape}</strong></p>
+        <p>{$bbs.body|escape|nl2br}</p>
     {/foreach}
 </body>
 </html>
