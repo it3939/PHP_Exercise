@@ -117,7 +117,7 @@
 - `rss`：Yahooニューストピックス（ https://news.yahoo.co.jp/pickup/computer/rss.xml ）をリスト表示
 - `bbs`：簡易掲示板Webアプリケーション
 - `bbs-db`：簡易掲示板Webアプリケーション（DB版）
-- `db_migrate`
+- `db_migrate`：テーブル生成
   - `post.sql`
     ```sql
     DROP TABLE IF EXISTS post;
