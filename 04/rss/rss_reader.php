@@ -1,20 +1,19 @@
 <?php
 error_reporting(E_ALL);                  // エラーを表示
 ini_set('display_errors', "Off");        // 画面上のエラーを非表示設定にする
-$mysqli = new mysqli("localhost", "root", "root", "rss_reader");
-$mysqli->set_charset("utf-8");
-$xml = 
-simplexml_load_file("https://news.yahoo.co.jp/pickup/computer/rss.xml");
+$mysqli = new mysqli("localhost", "root", "password", "rss_reader");
+$mysqli->set_charset("utf8");
+$xml = simplexml_load_file("https://news.yahoo.co.jp/pickup/computer/rss.xml");
+
 foreach ($xml->channel->item as $feed) {
     $stmt = $mysqli->prepare("SELECT * FROM rss_item WHERE guid = ?");
-    $stmt->bind_parm("s", $feed->guid);
+    $stmt->bind_param("s", $feed->guid);
     $stmt->execute();
     $stmt->store_result();
-    if ($stmt->num_rouws() == 0) {
-        $stmt2 = $mysql->prepare("INSERT INTO rss_item(pub_date, title, description, author, link, guid) VALUES(?, ?, ?, ?, ?, ?)");
+    if ($stmt->num_rows() == 0) {
+        $stmt2 = $mysqli->prepare("INSERT INTO rss_item (pub_date, title, description, author, link, guid) VALUES(?, ?, ?, ?, ?, ?)");
     } else {
-        $stmt2 = $mysqli->prepare("UPDATE rss_item SET pub_date = ?, 
-        title = ?, description = ?, author = ?, link = ? WHERE guid = ? ");
+        $stmt2 = $mysqli->prepare("UPDATE rss_item SET pub_date = ?, title = ?, description = ?, author = ?, link = ? WHERE guid = ?");
     } 
     $stmt2->bind_param("ssssss", date("Y/m/d H:i:s", strtotime($feed->pubDate)), $feed->title, $feed->description, $feed->author, $feed->link, $feed->guid);
     $stmt2->execute();
@@ -37,24 +36,24 @@ while ($rss = $query_result->fetch_array()) {
     <ul>
         <?php foreach ($rss_list as $rss) { ?>
             <li>
-                <a href="#no<?php echo($rss["title"]) ?>">
-                <?php echo(htmlspecialchars($rss["title"], ENT_QUOTES)); ?>
+                <a href="#no<?php echo($rss['id']) ?>">
+                <?php echo(htmlspecialchars($rss['title'], ENT_QUOTES)); ?>
             </li>
         <?php }?>
     </ul>
     <?php foreach ($rss_list as $rss) { ?>
         <a name="no<?php echo($rss["id"]) ?>">
         <h2>
-            <a href="<?php echo(htmlspecialchars($rss["link"])) ?>">
-                <?php echo(htmlspecialchars($rss["title"], ENT_QUOTES)); ?>
+            <a href="<?php echo(htmlspecialchars($rss['link'])) ?>">
+                <?php echo(htmlspecialchars($rss['title'], ENT_QUOTES)); ?>
             </a>
         </h2>
         <p>
-            <strong>作成: <?php echo(htmlspecialchars($rss["author"])) ?>
-            (<?php echo(htmlspecialchars($rss["pub_date"])) ?>)
+            <strong>作成：<?php echo(htmlspecialchars($rss['author'])) ?>
+            (<?php echo(htmlspecialchars($rss['pub_date'])) ?>)
             </strong>
         </p>
-        <p><?php echo(nl2br(strip_tags($rss["description"]))); ?></p>
+        <p><?php echo(nl2br(strip_tags($rss['description']))); ?></p>
     <?php } ?>
 </body>
 </html>
