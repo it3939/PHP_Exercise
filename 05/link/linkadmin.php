@@ -4,7 +4,7 @@
     session_cache_limiter("public");  // キャッシュ制御用のHTTPヘッダを取得
     session_start();                  // セッション開始
 
-    require "config.php";             // 設定ファイル読み込み
+    require "../init/config.php";             // 設定ファイル読み込み
 
     $prmarray = cnv_formstr($_POST);  // フォームデータをPOSTメソッドに変換
 
@@ -314,7 +314,7 @@ function screen_delconf($array) {
 function screen_dojob($array) {
     $res_mes = db_update($array);
 ?>
-    <p><?php disp_menu(); ?>
+    <?php disp_menu(); ?>
     <h3>処理完了画面</h3>
 
     <!-- 処理結果表示 -->
@@ -455,7 +455,7 @@ function disp_listdata($key,$p) {
 
     $res = db_query($sql, $conn);
     if ($res->num_rows <= 0) {
-        echo "<p>データは登録されていません</p>";
+        echo "<p>データは登録されていません。</p>";
         return;
     }
 ?>
