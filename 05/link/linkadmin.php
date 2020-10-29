@@ -310,7 +310,6 @@ function screen_delconf($array) {
 //----------------------------------------------------
 // 処理完了画面
 //----------------------------------------------------
-
 function screen_dojob($array) {
     $res_mes = db_update($array);
 ?>
@@ -369,9 +368,9 @@ function chk_data($array) {
         $strerr = "1";
     }
     if ($strerr == "1") {
-        return FALSE;
+        return false;
     } else {
-        return TRUE;
+        return true;
     }
 }
 
@@ -593,6 +592,7 @@ function db_query($sql,$conn) {
 function db_update($array) {
     global $conn;
     global $dt;
+    
     if (!isset($array["kbn"])) {
         return "パラメータエラー";
     }
@@ -602,7 +602,7 @@ function db_update($array) {
         }
     }
     if ($array["kbn"] != "ent") {
-        if(!isset($array["id"])) {
+        if (!isset($array["id"])) {
             return "パラメータエラー";
         }
     }
