@@ -8,7 +8,7 @@
     - Default Pass：[Enter]キー
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) MAMP（macOS）
   - DocumentRoot：`/Applications/MAMP/htdocs`
-  - MySQL：`/Applications/MAMP/Library/bin/`
+  - MySQL：`/Applications/MAMP/Library/bin`
     - `$ mysql -u root -p`
     - Default Pass：root 
 - ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) LAMP（Linux）

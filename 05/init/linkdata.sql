@@ -38,8 +38,3 @@ VALUES (9, 'https://golang.org/', 'GoLang', 'GoLang Documentation', '2020-10-22 
 
 INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
 VALUES (10, 'https://www.php.net/manual/ja/index.php', 'PHP', 'PHP Documentation', '2020-10-22 14:57:14');
-
-
-
-
-
