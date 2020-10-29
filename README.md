@@ -1,12 +1,21 @@
 # PHP_Exercise
 - 2020後期 Webプログラミング及び演習 PHPコード
 ### 自由にダウンロードして使ってください。<br>マルチプラットフォームに対応できるようにコード修正してあります。<br>どのOSでも結果たぶん同じなはず！
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) XAMPP DocumentRoot（Windows, macOS, Linux）
-  - `/Applications/XAMPP/xamppfiles/htdocs`
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) MAMP DocumentRoot（macOS）
-  - `/Applications/MAMP/htdocs`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) LAMP DocumentRoot（Linux）
-  - `/var/www/html` 
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) XAMPP（Windows, macOS, Linux）
+  - DocumentRoot：`/Applications/XAMPP/xamppfiles/htdocs`
+  - MySQL：`/Applications/XAMPP/xamppfiles/bin`
+    - `$ mysql -u root -p`
+    - Default Pass：[Enter]キー
+- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) MAMP（macOS）
+  - DocumentRoot：`/Applications/MAMP/htdocs`
+  - MySQL：`/Applications/MAMP/Library/bin/`
+    - `$ mysql -u root -p`
+    - Default Pass：root 
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) LAMP（Linux）
+  - DocumentRoot：`/var/www/html` 
+  - MySQL：`/usr/bin`
+    - `$ sudo mysql -u root -p`
+    - Default Pass：[Enter]キー
 
 ### 01：[1] 2020/09/24
 - `sample01-01`：print文
@@ -154,7 +163,7 @@
   - `linkdata.php`
     ```sql
     DROP TABLE IF EXISTS linkdata;
-  
+    
     CREATE TABLE linkdata (
         id         int(11)      NOT NULL AUTO_INCREMENT,
         l_url      varchar(255) NOT NULL,
@@ -162,5 +171,36 @@
         l_comment  varchar(255) NOT NULL,
         l_date     datetime     NOT NULL,
         PRIMARY KEY (id)
-    );
+    ); 
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (1, 'https://github.com/GotoRen', 'Github', 'GotoRen Remote Repository', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (2, 'https://qiita.com/ren1007', 'Qiita', 'GotoRen Qiita mypage', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (3, 'https://pluslab.org', 'Pluslab', '内藤研究室', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (4, 'https://www.youtube.com/', 'YouTube', 'YouTube 動画視聴サイト', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (5, 'https://techbowl.co.jp/techtrain', 'Techbowl', 'TechTrain | TechBowl', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (6, 'https://www.cyberagent.co.jp/', 'CyberAgent', '株式会社サイバーエージェント', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (7, 'https://dl.acm.org/', 'CyberAgent', 'ACM DL DIGITAL LIBRARY', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (8, 'https://app.diagrams.net/', 'Drow.io', 'EditPage Drow.io', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (9, 'https://golang.org/', 'GoLang', 'GoLang Documentation', '2020-10-22 14:57:14');
+    
+    INSERT INTO linkdata (id, l_url, l_title, l_comment, l_date)
+    VALUES (10, 'https://www.php.net/manual/ja/index.php', 'PHP', 'PHP Documentation', '2020-10-22 14:57:14');
     ```
+    
