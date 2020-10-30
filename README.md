@@ -160,7 +160,7 @@
 ### 05：[5] 2020/10/22
 - `link`：__リンク管理アプリケーション__
 - `init`：設定ファイル
-  - `linkdata.php`
+  - `linkdata.sql`
     ```sql
     DROP TABLE IF EXISTS linkdata;
     
