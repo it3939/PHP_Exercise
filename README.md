@@ -204,3 +204,71 @@
     VALUES (10, 'https://www.php.net/manual/ja/index.php', 'PHP', 'PHP Documentation', '2020-10-22 14:57:14');
     ```
     
+### 06, 07：[6] 2020/10/29, [7] 2020/11/05
+- 【PHP 中間自由課題】
+- `Schedule-Manager`：__スケジュール管理アプリケーション__
+  - https://github.com/GotoRen/Schedule-Manager
+
+### 08-1：[8] 2020/11/12
+- __Webアプリケーション__
+  1. `require`で`http`オブジェクトを用意
+  2. `createServer`でサーバを用意
+  3. `listen`で待ち受け開始（サーバ起動）
+- __EJS（Embedded JavaScript）テンプレート__
+  - テンプレートエンジンを使用したフレキシブルな構成
+  - パッケージのインストール：`$ npm install ejs`
+  - `fs`オブジェクトを使用して`readFileSync`で読み込む
+  - `ejs.render`でレンダリング
+  - 結果を`write`メソッドで書き出す
+- __ルーティング__
+  ```js
+  var url_parts - url.parse(request.url);
+
+  switch (url_parts.pathname) {
+
+    case "/":
+      // デフォルトページ
+      break;
+
+    default: 
+      // 例外ページ
+      break;  
+
+  }
+  ```
+
+### 08-2：[8] 2020/11/12  
+- __フォームの送信とイベント処理__
+  - リクエスト方式の判定
+    ```js
+    if (request.method == 'POST') {
+      // POST受信時の処理
+    } else {
+      // GET受信時の処理
+    }
+    ```
+- __ローカルストレージとクライアント機能（クッキー）の利用__
+  - クッキーの値を設定
+    ```js
+    function setCookie(key, value, response) {
+        var cookie = escape(value); // クッキーに保存するためエスケープ処理する
+
+        response.setHeader('Set-Cookie', [key + '=' + cookie]); // response.setHeader   ('Set-Cookie', ['キー=値'], ['キー=値'], ...);
+    }
+    ```
+  - クッキーの値を取得
+    ```js
+    function getCookie(key, request) {
+        var cookie_data = request.headers.cookie != undefined ? request.headers.cookie : ''; // 三項演算子
+        var data = cookie_data.split(';') // 取得したクッキーデータに含まれる ';' を用いて分割
+
+        for (var i in data) {
+            if (data[i].trim().startsWith(key + '=')) { // key + '=' で始まっているかどうかを確認
+                var result = data[i].trim().substring(key.length + 1); // 'key='の後のテキス部分を取り出す
+                return unescape(result); // クッキーの形式から通常のテキストに戻す
+            }
+        }
+        return '';
+    }
+    ```
+- __データ保存及びファイルの読み書き__
