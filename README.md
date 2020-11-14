@@ -248,27 +248,35 @@
     }
     ```
 - __ローカルストレージとクライアント機能（クッキー）の利用__
-  - クッキーの値を設定
-    ```js
-    function setCookie(key, value, response) {
-        var cookie = escape(value); // クッキーに保存するためエスケープ処理する
-
-        response.setHeader('Set-Cookie', [key + '=' + cookie]); // response.setHeader   ('Set-Cookie', ['キー=値'], ['キー=値'], ...);
-    }
-    ```
-  - クッキーの値を取得
-    ```js
-    function getCookie(key, request) {
-        var cookie_data = request.headers.cookie != undefined ? request.headers.cookie : ''; // 三項演算子
-        var data = cookie_data.split(';') // 取得したクッキーデータに含まれる ';' を用いて分割
-
-        for (var i in data) {
-            if (data[i].trim().startsWith(key + '=')) { // key + '=' で始まっているかどうかを確認
-                var result = data[i].trim().substring(key.length + 1); // 'key='の後のテキス部分を取り出す
-                return unescape(result); // クッキーの形式から通常のテキストに戻す
-            }
-        }
-        return '';
-    }
-    ```
+  - <font color="Red">クッキー</font>
+    - クッキーの値を設定
+      ```js
+      function setCookie(key, value, response) {
+          var cookie = escape(value); // クッキーに保存するためエスケープ処理する
+  
+          response.setHeader('Set-Cookie', [key + '=' + cookie]); // response.setHeader   ('Set-Cookie', ['キー=値'], ['キー=値'], ...);
+      }
+      ```
+    - クッキーの値を取得
+      ```js
+      function getCookie(key, request) {
+          var cookie_data = request.headers.cookie != undefined ? request.headers.cookie : ''; // 三項演算子
+          var data = cookie_data.split(';') // 取得したクッキーデータに含まれる ';' を用いて分割
+  
+          for (var i in data) {
+              if (data[i].trim().startsWith(key + '=')) { // key + '=' で始まっているかどうかを確認
+                  var result = data[i].trim().substring(key.length + 1); // 'key='の後のテキス部分を取り出す
+                  return unescape(result); // クッキーの形式から通常のテキストに戻す
+              }
+          }
+          return '';
+      }
+      ```
+  - <font color="Red">ローカルストレージ</font>    
+    - ローカルストレージに値を保存する
+      - `localStorage.setItem(キー, 値);`
+    - ローカルストレージから値を取り出す
+      - `変数 = localStorage.getItem(キー);`
 - __データ保存及びファイルの読み書き__
+  - ファイルの書き込み
+    - `fs.writeFile(ファイル名, レコード, (エラー) => {...保存後の処理...});`
