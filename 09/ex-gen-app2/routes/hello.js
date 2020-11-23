@@ -19,6 +19,6 @@ router.post('/post', (req, res, next) => {
         content: 'あなたは、「' + msg + '」と送信しました。'
     }
     res.render('hello', data);
-})
+});
 
 module.exports = router;
