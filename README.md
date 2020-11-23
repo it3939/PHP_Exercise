@@ -1,6 +1,8 @@
 # PHP_Exercise
+## 💡 Overview
 - 2020後期 Webプログラミング及び演習 PHPコード
-### 自由にダウンロードして使ってください。<br>マルチプラットフォームに対応できるようにコード修正してあります。<br>どのOSでも結果たぶん同じなはず！
+
+## ⚡ Usage
 - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) XAMPP（Windows, macOS, Linux）
   - DocumentRoot：`/Applications/XAMPP/xamppfiles/htdocs`
   - MySQL：`/Applications/XAMPP/xamppfiles/bin`
@@ -16,7 +18,14 @@
   - MySQL：`/usr/bin`
     - `$ sudo mysql -u root -p`
     - Default Pass：[Enter]キー
+- ![#008000](https://placehold.it/15/008000/000000?text=+) DAMP（Docker）
+  - Repository：[https://github.com/GotoRen/docker-apache](https://github.com/GotoRen/docker-apache)
+  - DocumentRoot：`apache-docker/htdocs` 
+  - MySQL：`$ docker exec -it docker-apache-mysql /bin/bash`
+    - `$ mysql -u root -p`
+    - Pass：`password`
 
+## 🐘 PHP
 ### 01：[1] 2020/09/24
 - `sample01-01`：print文
 - `sample01-02`：echo文
@@ -209,6 +218,7 @@
 - `Schedule-Manager`：__スケジュール管理アプリケーション__
   - https://github.com/GotoRen/Schedule-Manager
 
+## ⬢ Node.js
 ### 08-1：[8] 2020/11/12
 - __Webアプリケーション__
   1. `require`で`http`オブジェクトを用意
