@@ -25,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 /* セッション利用のための処理 */
-// オプションの設定
 var session_opt = {
   secret: 'keyboard cat',
   resave: false,
