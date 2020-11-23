@@ -280,3 +280,152 @@
 - __データ保存及びファイルの読み書き__
   - ファイルの書き込み
     - `fs.writeFile(ファイル名, レコード, (エラー) => {...保存後の処理...});`
+
+### 09：[9] 2020/11/19  
+- 環境構築
+  ```
+  ### グローバル環境（Node.js全体）にインストール
+  $ sudo npm install -g express-generator
+  Password: [スーパーユーザのパスワードを入力]
+  npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+  /usr/local/bin/express -> /usr/local/lib/node_modules/express-generator/bin/express-cli.js
+  + express-generator@4.16.1
+  added 10 packages from 13 contributors in 0.625  
+     ╭────────────────────────────────────────────────────────────────╮
+     │                                                                │
+     │      New patch version of npm available! 6.14.8 → 6.14.9       │
+     │   Changelog: https://github.com/npm/cli/releases/tag/v6.14.9   │
+     │               Run npm install -g npm to update!                │
+     │                                                                │
+     ╰────────────────────────────────────────────────────────────────╯
+  
+  ### Expressのバージョンを確認
+  $ express --version
+  4.16.  
+  ### プロジェクトの作成
+  $ cd [プロジェクトを立ち上げるディレクトリへ移動]
+  
+  ### アプリケーション名: ex-gen-app を作成 
+  $ express --view=ejs ex-gen-app
+  
+     create : ex-gen-app/
+     create : ex-gen-app/public/
+     create : ex-gen-app/public/javascripts/
+     create : ex-gen-app/public/images/
+     create : ex-gen-app/public/stylesheets/
+     create : ex-gen-app/public/stylesheets/style.css
+     create : ex-gen-app/routes/
+     create : ex-gen-app/routes/index.js
+     create : ex-gen-app/routes/users.js
+     create : ex-gen-app/views/
+     create : ex-gen-app/views/error.ejs
+     create : ex-gen-app/views/index.ejs
+     create : ex-gen-app/app.js
+     create : ex-gen-app/package.json
+     create : ex-gen-app/bin/
+     create : ex-gen-app/bin/www
+  
+     change directory:
+       $ cd ex-gen-app
+  
+     install dependencies:
+       $ npm install
+  
+     run the app:
+       $ DEBUG=ex-gen-app:* npm start
+  
+  ### パッケージをインストール
+  $ npm install
+  
+  ### 実行
+  $ npm start
+  ```  
+  - [http://localhost:3000/](http://localhost:3000/)
+- Express Generator を使用しない開発法
+  ```
+  ### プロジェクトの作成
+  $ cd [プロジェクトを立ち上げるディレクトリへ移動]
+  
+  ### アプリケーション名: exprss-app を作成 
+  $ mkdir exprss-app
+  
+  ### npmを初期化
+  $ npm init
+  This utility will walk you through creating a package.json file.
+  It only covers the most common items, and tries to guess sensible defaults.
+  
+  See `npm help init` for definitive documentation on these fields
+  and exactly what they do.
+  
+  Use `npm install <pkg>` afterwards to install a package and
+  save it as a dependency in the package.json file.
+  
+  Press ^C at any time to quit.
+  package name: (express-app) [Enterキー]
+  version: (1.0.0) [Enterキー]
+  description: [Enterキー]
+  entry point: (index.js) [Enterキー]
+  test command: [Enterキー]
+  git repository: [Enterキー]
+  keywords: [Enterキー]
+  author: [Enterキー]
+  license: (ISC) [Enterキー]
+  About to write to /Applications/XAMPP/xamppfiles/htdocs/WebProg_Exercise/09-1/express-app/package.json:
+  
+  {
+    "name": "express-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
+  
+  Is this OK? (yes) [Enterキー]
+  
+  ### Expressをインストール
+  $ npm install express
+  npm notice created a lockfile as package-lock.json. You should commit this file.
+  npm WARN express-app@1.0.0 No description
+  npm WARN express-app@1.0.0 No repository field.
+  
+  + express@4.17.1
+  added 50 packages from 37 contributors and audited 50 packages in 1.566s
+  found 0 vulnerabilities
+  ``` 
+- Express Session のインストール
+  ```
+  $ npm install express-session
+  + express-session@1.17.1
+  added 5 packages from 5 contributors and audited 60 packages in 1.336s
+  found 0 vulnerabilities
+  ```   
+- XML2JSモジュール のインストール
+  ```
+  $ npm install xml2js
+  + xml2js@0.4.23
+  added 3 packages from 48 contributors and audited 63 packages in 1.202s
+  found 0 vulnerabilities
+  ```  
+- __Expressの基本手順__
+  ```js
+  /* 1. expressオブジェクトを用意 */
+  var express = require('express'); 
+  
+  /* 2. appオブジェクトの作成 */
+  var app = express();
+  
+  /* 3. ルーティングの設定 */
+  app.get('/', (req, res) => {
+      res.send('Welcome to Express!');
+  });
+  
+  /* 4. 待ち受け開始 */
+  app.listen(3000, () => {
+      console.log('Start server port:3000');
+  });
+  ```  
