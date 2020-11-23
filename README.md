@@ -301,7 +301,8 @@
   
   ### Expressのバージョンを確認
   $ express --version
-  4.16.  
+  4.16.1
+
   ### プロジェクトの作成
   $ cd [プロジェクトを立ち上げるディレクトリへ移動]
   
@@ -429,3 +430,19 @@
       console.log('Start server port:3000');
   });
   ```  
+- __値の取得（クエリと`query`オブジェクト）__
+  - `req.query.[値]`：query内から値を取り出す
+  - `req.body['値']`：`form`メソッドによって送信された値を取り出す  
+- ロードしたモジュールを利用する場合、以下の範囲に記述する必要がある
+    ```js
+    var app = express();
+    
+    /* app.useによる関数組み込み */
+    // この間に記述
+    
+    /* アクセスのためのapp.useを作成 */
+    app.use('/', indexRouter);
+    app.use('/users', usersRouter);
+    app.use('/hello', hello);
+    ```
+  - `var app = express();`より後かつ、`routes`フォルダのスクリプトをルーティングする`app.use`よりも前  
