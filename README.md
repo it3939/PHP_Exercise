@@ -20,7 +20,7 @@
     - Default Pass：[Enter]キー
 - ![#008000](https://placehold.it/15/008000/000000?text=+) DAMP（Docker）
   - Repository：[https://github.com/GotoRen/docker-apache](https://github.com/GotoRen/docker-apache)
-  - DocumentRoot：`apache-docker/htdocs` 
+  - DocumentRoot：`docker-apache/htdocs` 
   - MySQL：`$ docker exec -it docker-apache-mysql /bin/bash`
     - `$ mysql -u root -p`
     - Pass：`password`
