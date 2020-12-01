@@ -248,6 +248,8 @@
   ```
 
 ### 08-2：[8] 2020/11/12  
+- __パーシャルの読み込み__
+  - `<%- inclue(ファイル名, {受け渡す値}) %>`
 - __フォームの送信とイベント処理__
   - リクエスト方式の判定
     ```js
@@ -258,7 +260,7 @@
     }
     ```
 - __ローカルストレージとクライアント機能（クッキー）の利用__
-  - <font color="Red">クッキー</font>
+  - クッキー
     - クッキーの値を設定
       ```js
       function setCookie(key, value, response) {
@@ -282,7 +284,7 @@
           return '';
       }
       ```
-  - <font color="Red">ローカルストレージ</font>    
+  - ローカルストレージ
     - ローカルストレージに値を保存する
       - `localStorage.setItem(キー, 値);`
     - ローカルストレージから値を取り出す
@@ -291,7 +293,7 @@
   - ファイルの書き込み
     - `fs.writeFile(ファイル名, レコード, (エラー) => {...保存後の処理...});`
 
-### 09：[9] 2020/11/19  
+### 09：[9] 2020/11/19
 - 環境構築
   ```
   ### グローバル環境（Node.js全体）にインストール
@@ -456,3 +458,73 @@
     app.use('/hello', hello);
     ```
   - `var app = express();`より後かつ、`routes`フォルダのスクリプトをルーティングする`app.use`よりも前  
+
+### 10：[10] 2020/11/26
+- DB Browser for SQLite インストール
+  ```
+  ### DB Browser for SQLite をインストール
+  $ brew cask install db-browser-for-sqlite
+  
+  ### 確認 
+  $ sqlite3 --version
+  3.32.3 2020-06-18 14:00:33 7ebdfa80be8e8e73324b8d66b3460222eb74c7e9dfd655b48d6ca7e1933cc8fd
+  $ which sqlite3
+  /Applications/XAMPP/xamppfiles/bin/sqlite3
+  ```
+- SQLiteへ接続
+  ```
+  ### 移動
+  $ cd [sqliteのDBファイルが存在するディレクトリ]
+
+  ### SQLiteへ接続
+  $ sqlite3 mydb.sqlite3
+  SQLite version 3.32.3 2020-06-18 14:00:33
+  Enter ".help" for usage hints.
+  sqlite>
+
+  ### 挿入されているデータを確認
+  > select * from mydata;
+  1|taro|taro@yamada|39
+  2|hanako|hanako@flower|28
+  3|sachiko|sachiko@happy|17
+  4|jiro|jiro@change|6
+  5|ren|ren@goto|21
+
+  ### 切断
+  > .exit
+  ```
+- `sqlite3`パッケージのインストール（ExpressからSQLiteに接続）
+  ```
+  ### 移動
+  $ cd [プロジェクトを立ち上げるディレクトリ]
+
+  ### SQLite3をインストール
+  $ npm install sqlite3
+  ```  
+- データベースオブジェクトの取得
+  ```
+  const sqlite3 = require('sqlite3');
+  const db = new sqlite3.Database('DB名');
+  ```
+- __レコードの取り出し__
+  - 全て
+    - `db.all(SQLクエリ, コールバック関数);`
+  - レコードごと
+    - `db.each(SQLクエリ, レコード取得関数, レンダリング関数);`
+- __SQLクエリの実行（プレースホルダ）__
+  - 追加
+    - `db.run("INSERT INTO mydata (name, mail, age) VALUES (?, ?, ?)", nm, ml, ag);`
+  - 1レコードのみを取得（結果が一意に定まるとき）
+    - `db.get("SELECT * FROM mydata WHERE id = ?", [id], コールバック関数);`
+  - 更新（条件に合致する項目が複数存在する場合、それらはすべて更新される)
+    - `db.run("UPDATE mydata SET name = ?, mail = ?, age = ? WHERE id = ?", nm, ml, ag, id);`
+  - 削除（条件に合致する項目が複数存在する場合、それらはすべて更新される)
+    - `db.run("DELETE FROM mydata WHERE id = ?", id);`
+- `express-validator`のインストール
+  ```
+  ### 移動
+  $ cd [プロジェクトを立ち上げるディレクトリ]
+  
+  ### Express Validatorをインストール
+  $ npm install express-validator
+  ```
