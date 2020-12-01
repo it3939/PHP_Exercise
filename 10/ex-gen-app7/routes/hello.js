@@ -41,7 +41,7 @@ router.get('/add', (req, res, next) => {
         title: 'Hello/Add',
         content: '新しいレコードを入力：'
     }
-    res.render('Hello/Add', data);
+    res.render('hello/add', data);
 });
 
 /* POSTアクセスの処理 */
