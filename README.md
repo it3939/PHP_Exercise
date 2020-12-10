@@ -573,13 +573,13 @@
     - `migrations/***-create-user.js`
       ```js
       module.exports = {
-          up: async (queryInterface, Sequelize) => {
-            await queryInterface.createTable('テーブル名', {
-              // 生成処理
+        up: async (queryInterface, Sequelize) => {
+          await queryInterface.createTable('テーブル名', {
+            // 生成処理
           });
         },
         down: async (queryInterface, Sequelize) => {
-            // 削除処理
+          // 削除処理
         }
       };  
       ```
