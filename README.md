@@ -528,3 +528,65 @@
   ### Express Validatorをインストール
   $ npm install express-validator
   ```
+
+### 11：[11] 2020/12/03  
+- Sequelize インストール
+  ```
+  ### 移動
+  $ cd [プロジェクトを立ち上げるディレクトリ]
+
+  ### sequelizeパッケージのインストール
+  $ npm install sequelize
+
+  ### Sequelize CLI のインストール
+  $ npm install sequelize-cli
+  ```
+- __① Sequelizeの初期化__
+  - `$ npx sequelize-cli init`
+  - 生成されるフォルダ
+    - `config`：設定情報を管理する`config.json`を扱う
+      ```json
+      {
+            "development": {
+              // 開発中の設定
+        },
+        "test": {
+             // テスト用の設定
+        },
+        "production": {
+             // 正式リリース時の設定
+        }
+      }
+      ```       
+    - `migrations`：DBの変更情報などを管理するファイルを扱う
+    - `models`：DBにアクセスして使用する「モデル」オブジェクトを定義する
+    - `seeders`：初期データ（シーダー）を扱う
+- __② モデルの作成__
+  - <u>モデル</u>：DBのテーブルにアクセスするための機能を提供するオブジェクト
+  - `$ npx sequelize-cli model:generate --name モデル名 --attributes 名前:タイプ,名前:タイプ,名前:タイプ,...`
+    - `$ npx sequelize-cli model:generate --name User --attributes name:string,pass:string,mail:string,age:integer`
+    - `model`フォルダに`user.js`ファイルが生成される
+- __③ マイグレーションの実行__
+  - DBの内容を変更した場合などに、その差分をDBに適用したり、前の状態に戻したりする操作を行うための仕組み
+  - 最初のマイグレーションで、作成したモデルなどの情報を元にDBを更新して必要なテーブルを生成する
+  - `$ npx sequelize-cli db:migrate --env development`
+    - `migrations/***-create-user.js`
+      ```js
+      module.exports = {
+          up: async (queryInterface, Sequelize) => {
+            await queryInterface.createTable('テーブル名', {
+              // 生成処理
+          });
+        },
+        down: async (queryInterface, Sequelize) => {
+            // 削除処理
+        }
+      };  
+      ```
+- __④ シーディング__      
+  - テーブル作成時に初期データとして簡単なレコード（シード）を予め挿入しておく
+  - シーディング用のスクリプトファイルを生成して作成するレコードの内容を記述しておく
+  - シーディングファイルの作成
+    - `$ npx sequelize-cli seed:generate --name sample-user`
+  - シーディングの実行
+    - `$ npx sequelize-cli db:seed:all`
