@@ -347,6 +347,9 @@
      run the app:
        $ DEBUG=ex-gen-app:* npm start
   
+  ### 移動
+  $ cd ex-gen-app
+
   ### パッケージをインストール
   $ npm install
   
