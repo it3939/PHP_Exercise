@@ -565,7 +565,7 @@
     - `models`：DBにアクセスして使用する「モデル」オブジェクトを定義する
     - `seeders`：初期データ（シーダー）を扱う
 - __② モデルの作成__
-  - <u>モデル</u>：DBのテーブルにアクセスするための機能を提供するオブジェクト
+  - モデル：DBのテーブルにアクセスするための機能を提供するオブジェクト
   - `$ npx sequelize-cli model:generate --name モデル名 --attributes 名前:タイプ,名前:タイプ,名前:タイプ,...`
     - `$ npx sequelize-cli model:generate --name User --attributes name:string,pass:string,mail:string,age:integer`
     - `model`フォルダに`user.js`ファイルが生成される
@@ -586,6 +586,9 @@
         }
       };  
       ```
+    - `createdAt`：作成日時
+    - `updatedAt`：更新日時<br>
+    → SequelizeによってDBマイグレーションを実行すると自動的に生成される
 - __④ シーディング__      
   - テーブル作成時に初期データとして簡単なレコード（シード）を予め挿入しておく
   - シーディング用のスクリプトファイルを生成して作成するレコードの内容を記述しておく
@@ -593,3 +596,52 @@
     - `$ npx sequelize-cli seed:generate --name sample-user`
   - シーディングの実行
     - `$ npx sequelize-cli db:seed:all`
+
+### 12：[12] 2020/12/10  
+- __DBアソシエート__
+  - アソシエーションの4つの方式
+    - __1 対 1（One to One）方式__
+      - モデルAの値が、モデルBの値に1つずつ関連付けられる
+      - `モデルA.hasOne(モデルB, オプション);`
+        - 主モデル：`hasOne`
+        - 従モデル：`belongsTo`
+    - __1 対 多（One to Many）方式__
+      - モデルAの値が、複数のモデルBの値が関連づけられる
+      - `モデルA.hasMany(モデルB, オプション);`
+        - 主モデル：`hasMany`
+        - 従モデル：`belongsTo`
+    - __多 対 1（Many to One）方式__ ⬅ 通常、使用することはない
+      - 複数のモデルAの値が、単一のモデルBの値に関連づけられる
+      - `モデルB.belongsTo(モデルA, オプション);`
+        - 主モデル：`hasOne`
+        - 従モデル：`belongsToMany`
+    - __多 対 多（Many to Many）方式__
+      - モデルAの複数の値に、モデルBの複数の値が互いに関連し合うように関連づけられる
+      - `モデルB.belongsToMany(モデルA, オプション);`
+        - 主モデル：`hasMany`
+        - 従モデル：`belongsToMany`
+  - `has***`メソッド
+    - 『主モデル』として機能
+  - `belongsTo***`メソッド
+    - 『従モデル』として機能
+  - アソシエーションモデルの読み込み
+    ```js
+    include: [{
+      model: db.主モデル,
+      required: true
+    }]
+    ```
+- マークダウン作成ツールパッケージのインストール
+  ```
+  ### 移動
+  $ cd [プロジェクトを立ち上げるディレクトリ]
+  
+  ### MarkdownIt パッケージのインストール
+  $ npm install markdown-it    
+  
+  ### Knex のインストール
+  $ npm install knex
+  
+  ### Bookshelf のインストール
+  $ npm install bookshelf
+  ```
