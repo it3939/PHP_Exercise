@@ -214,8 +214,7 @@
     ```
     
 ### 06, 07：[6] 2020/10/29, [7] 2020/11/05
-- 【PHP 中間自由課題】
-- `Schedule-Manager`：__スケジュール管理アプリケーション__
+- `Schedule-Manager`：__スケジュール管理アプリケーションの作成__
   - https://github.com/GotoRen/Schedule-Manager
 
 ## ⬢ Node.js
