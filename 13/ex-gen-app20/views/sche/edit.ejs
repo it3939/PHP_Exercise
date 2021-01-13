@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="container">
+    <header>
+        <h1 class="display-4 text-primary"><%= title %></h1>
+    </header>
+    <div role="main">
+        <form action="/sche/edit" method=POST>
+            <div class="form-group">
+                <label>BEGIN</label>
+                <input type="datetime-local" name="begin" id="begin" class="form-control" value="<%= content.begin.getFullYear() %>-<%= ('0'+content.begin.getMonth()+1).slice(-2) %>-<%= ('0'+content.begin.getDate()).slice(-2) %>T<%= ('0'+content.begin.getHours()).slice(-2) %>:<%= ('0'+content.begin.getMinutes()).slice(-2) %>">
+            </div>
+            <div class="form-group">
+                <label>END</label>
+                <input type="datetime-local" name="end" id="end" class="form-control" value="<%= content.end.getFullYear() %>-<%= ('0'+content.end.getMonth()+1).slice(-2) %>-<%= ('0'+content.end.getDate()).slice(-2) %>T<%= ('0'+content.end.getHours()).slice(-2) %>:<%= ('0'+content.end.getMinutes()).slice(-2) %>">
+            </div
+            ><div class="form-group">
+                <label>PLACE</label>
+                <input type="text" name="place" id="place" class="form-control" value="<%= content.place %>">
+            </div>
+            <div class="form-group">
+                <label>CONTENT</label>
+                <input type="text" name="content" id="content" class="form-control" value="<%= content.content %>">
+            </div>
+            <input type="hidden" name="id" value="<%= content.id %>">
+            <input type="submit" class="btn btn-warning" value="修正">
+        </form>
+        <p class="mt-4">
+            <a href="/sche">&lt;&lt; Top へ戻る</a>
+        </p>
+    </div>
+</body>
+</html>

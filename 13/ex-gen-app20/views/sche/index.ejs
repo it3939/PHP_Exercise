@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="container">
+    <header>
+        <h1 class="display-4 text-primary"><%= title %></h1>
+    </header>
+    <div role="main">
+        <p class="h5 my-4">
+            Hi, <span><%= login.name %></span>!<br>
+            Welcome to <%= title %>.
+        </p>
+        <table class="table">
+            <% for (var i in content) { %> 
+                <% var ob = content[i]; %>
+                <tr>
+                    <td class="row">
+                        <div class="col-2">
+                            <p><%= ob.place %></p>
+                        </div>
+                        <div class="col-5">
+                            <p><%= ob.begin.getFullYear() %>-<%= ('0'+ob.begin.getMonth()+1).slice(-2) %>-<%= ('0'+ob.begin.getDate()).slice(-2) %> <%= ('0'+ob.begin.getHours()).slice(-2) %>:<%= ('0'+ob.begin.getMinutes()).slice(-2) %> ~ <%= ob.end.getFullYear() %>-<%= ('0'+ob.end.getMonth()+1).slice(-2) %>-<%= ('0'+ob.end.getDate()).slice(-2) %> <%= ('0'+ob.end.getHours()).slice(-2) %>:<%= ('0'+ob.end.getMinutes()).slice(-2) %></p>
+                        </div>
+                        <div class="col-3">
+                            <p><%= ob.content %></p>
+                        </div>
+                        <div class="col-2">
+                            <a class="btn btn-warning" href="/sche/edit/<%= ob.id %>">修正</a>
+                            <a class="btn btn-danger" href="/sche/delete/<%= ob.id %>">削除</a>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <p><a  class="btn btn-primary" href="/sche/add">登録</a></p>
+    </div>
+</body>
+</html>

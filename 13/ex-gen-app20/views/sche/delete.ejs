@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="container">
+    <header>
+        <h1 class="display-4 text-primary"><%= title %></h1>
+    </header>
+    <div role="main">
+        <table class="table">
+            <tr>
+                <th>BEGIN</th>
+                <td><%= content.begin.getFullYear() %>-<%= ('0'+content.begin.getMonth()+1).slice(-2) %>-<%= ('0'+content.begin.getDate()).slice(-2) %> <%= ('0'+content.begin.getHours()).slice(-2) %>:<%= ('0'+content.begin.getMinutes()).slice(-2) %></td>
+            </tr>
+            <tr>
+                <th>END</th>
+                <td><%= content.end.getFullYear() %>-<%= ('0'+content.end.getMonth()+1).slice(-2) %>-<%= ('0'+content.end.getDate()).slice(-2) %> <%= ('0'+content.end.getHours()).slice(-2) %>:<%= ('0'+content.end.getMinutes()).slice(-2) %></td>
+            </tr>
+            <tr>
+                <th>PLACE</th>
+                <td><%= content.place %></td>
+            </tr>
+            <tr>
+                <th>CONTENT</th>
+                <td><%= content.content %></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+            </tr>
+        </table>
+        <form action="/sche/delete" method=POST>
+            <input type="hidden" name="id" value="<%= content.id %>">
+            <input type="submit" class="btn btn-danger" value="削除">
+        </form>
+        <p class="mt-4">
+            <a href="/sche">&lt;&lt; Top へ戻る</a>
+        </p>
+    </div>
+</body>
+</html>
