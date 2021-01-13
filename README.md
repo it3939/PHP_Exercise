@@ -645,3 +645,12 @@
   $ npm install bookshelf
   ```
 ### 13：[13] 2020/12/17
+  - Markdownデータ管理ツールを参考に、スケジュール管理アプリを制作
+  - DBテーブル
+    | キー| 型 | 概要 |
+    | :---:  | :---: | :---: |
+    | userId | integer | UserのID |
+    | begin | datetime | 開始日時 |
+    | end | datetime | 終了日時 |
+    | place | text | 場所 |
+    | content | text | 内容 |
