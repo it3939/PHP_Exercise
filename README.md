@@ -214,7 +214,7 @@
     ```
     
 ### 06, 07：[6] 2020/10/29, [7] 2020/11/05
-- `Schedule-Manager`：__スケジュール管理アプリケーションの作成__
+- `Schedule-Manager`：__スケジュール管理アプリ__
   - https://github.com/GotoRen/Schedule-Manager
 
 ## ⬢ Node.js
@@ -654,3 +654,7 @@
     | end | datetime | 終了日時 |
     | place | text | 場所 |
     | content | text | 内容 |
+
+### 14, 15：[14] 2020/12/24, [15] 2021/01/14
+- `Bulletin-Board`：__掲示板アプリ__
+  - https://github.com/GotoRen/Bulletin-Board
