@@ -20,8 +20,8 @@
     - Default Pass：[Enter]キー
 - ![#FFA500](https://via.placeholder.com/15/ffa500/000000?text=+) DAMP（Docker）
   - Repository：[https://github.com/GotoRen/damp-plain](https://github.com/GotoRen/damp-plain)
-  - DocumentRoot：`docker-apache/htdocs` 
-  - MySQL：`$ docker exec -it docker-apache-mysql /bin/bash`
+  - DocumentRoot：`damp-plain/htdocs` 
+  - MySQL：`$ docker-compose exec db bash`
     - `$ mysql -u root -p`
     - Pass：`password`
 
