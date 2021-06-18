@@ -3,23 +3,23 @@
 - 2020後期 Webプログラミング及び演習 PHPコード
 
 ## ⚡ Usage
-- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) XAMPP（Windows, macOS, Linux）
+- ![#FF0000](https://via.placeholder.com/15/ff0000/000000?text=+) XAMPP（Windows, macOS, Linux）
   - DocumentRoot：`/Applications/XAMPP/xamppfiles/htdocs`
   - MySQL：`/Applications/XAMPP/xamppfiles/bin`
     - `$ mysql -u root -p`
     - Default Pass：[Enter]キー
-- ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) MAMP（macOS）
+- ![#800080](https://via.placeholder.com/15/800080/000000?text=+) MAMP（macOS）
   - DocumentRoot：`/Applications/MAMP/htdocs`
   - MySQL：`/Applications/MAMP/Library/bin`
     - `$ mysql -u root -p`
     - Default Pass：root 
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) LAMP（Linux）
+- ![#FF00FF](https://via.placeholder.com/15/ff00ff/000000?text=+) LAMP（Linux）
   - DocumentRoot：`/var/www/html` 
   - MySQL：`/usr/bin`
     - `$ sudo mysql -u root -p`
     - Default Pass：[Enter]キー
-- ![#008000](https://placehold.it/15/008000/000000?text=+) DAMP（Docker）
-  - Repository：[https://github.com/GotoRen/docker-apache](https://github.com/GotoRen/docker-apache)
+- ![#FFA500](https://via.placeholder.com/15/ffa500/000000?text=+) DAMP（Docker）
+  - Repository：[https://github.com/GotoRen/damp-plain](https://github.com/GotoRen/damp-plain)
   - DocumentRoot：`docker-apache/htdocs` 
   - MySQL：`$ docker exec -it docker-apache-mysql /bin/bash`
     - `$ mysql -u root -p`
@@ -132,7 +132,7 @@
 
 ### 04：[3] 2020/10/15
 - `todo`：TODO管理Webアプリケーション
-- `rss`：Yahooニューストピックス（ https://news.yahoo.co.jp/pickup/computer/rss.xml ）をリスト表示
+- `rss`：Yahooニューストピックス（[https://news.yahoo.co.jp/pickup/computer/rss.xml](https://news.yahoo.co.jp/pickup/computer/rss.xml)）をリスト表示
 - `bbs`：簡易掲示板Webアプリケーション
 - `bbs-db`：簡易掲示板Webアプリケーション（DB版）
 - `db_migrate`：テーブル生成
@@ -215,7 +215,7 @@
     
 ### 06, 07：[6] 2020/10/29, [7] 2020/11/05
 - `Schedule-Manager`：__スケジュール管理アプリ__
-  - https://github.com/GotoRen/Schedule-Manager
+  - [https://github.com/GotoRen/Schedule-Manager](https://github.com/GotoRen/Schedule-Manager)
 
 ## ⬢ Node.js
 ### 08-1：[8] 2020/11/12
@@ -657,4 +657,4 @@
 
 ### 14, 15：[14] 2020/12/24, [15] 2021/01/14
 - `Bulletin-Board`：__掲示板アプリ__
-  - https://github.com/GotoRen/Bulletin-Board
+  - [https://github.com/GotoRen/Bulletin-Board](https://github.com/GotoRen/Bulletin-Board)
